@@ -10,10 +10,20 @@
 
     <title>Quizzy</title>
 </head>
+<style>
+    body {
+        background-image: url(quizy.png);
+    }
+</style>
 
 <body>
     <div class="quiz-container" id="quiz">
         <div class="quiz-header">
+            <div class="timer">
+                <div>
+                    <span class="timer_sec">00:30</span>
+                </div>
+            </div>
             <h2 id="question">Question Text</h2>
             <ul>
                 <li>
@@ -33,6 +43,11 @@
                     <label for="d" id="d_text">Answer</label>
                 </li>
             </ul>
+        </div>
+        <div class="bullets">
+            <div class="spans">
+                <span class="on"></span>
+            </div>
         </div>
         <button id="submit">Submit</button>
     </div>
