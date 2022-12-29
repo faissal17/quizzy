@@ -1,3 +1,13 @@
+<?php
+
+
+
+
+
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,11 +20,6 @@
 
     <title>Quizzy</title>
 </head>
-<style>
-    body {
-        background-image: url(quizy.png);
-    }
-</style>
 
 <body>
     <div class="quiz-container" id="quiz">
@@ -44,15 +49,24 @@
                 </li>
             </ul>
         </div>
-        <div class="bullets">
-            <div class="spans">
-                <span class="on"></span>
-            </div>
-        </div>
         <button id="submit">Submit</button>
     </div>
+    <div class="awsanswers" id="awsanswers">
+        <div class="thequest">
+            <h2></h2>
+        </div>
+        <div class="theansw">
+            <h3></h3>
+        </div>
+        <div class="justification">
+            <h6></h6>
+        </div>
+    </div>
 </body>
+
 <script src="question.js"></script>
+<script src="answer.js"></script>
 <script src="script.js"></script>
 
 </html>
+</php>

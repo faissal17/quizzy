@@ -16,9 +16,11 @@ let timer;
 let TimeValue;
 let duration;
 let duree;
+let answerEl;
 
 AvanceQuizz();
 countDown(30, 10);
+let arr = [];
 
 // function of answers
 
@@ -32,6 +34,7 @@ function AvanceQuizz() {
     c_text.innerText = QuizData.c;
     d_text.innerText = QuizData.d;
 }
+
 // function that check answers
 
 function getanswer() {
@@ -49,6 +52,8 @@ function getSelected() {
 }
 submitbtn.addEventListener("click", () => {
     const answer = getSelected();
+    arr.push();
+    console.log(arr);
     if (answer) {
         if (answer === CounterData[Counter].correct) Score++;
     }
@@ -60,7 +65,7 @@ submitbtn.addEventListener("click", () => {
         // StartTimer(TimeValue);
     } else {
         quizz.innerHTML = `<h2>You Answerd ${Score}/${CounterData.length}
-        <button oncklick="show()">Show Answers</button>`;
+        <button onclick="show()">Show Answers</button>`;
     }
 });
 
@@ -68,8 +73,6 @@ function countDown(duration, q_count) {
     if (Counter < q_count) {
         duree = setInterval(() => {
             timeCount.innerHTML = "00:" + duration;
-            // duration = duration < 10 ? `0 ${duration}` : `${duration}`;
-
             if (--duration < 0) {
                 clearInterval(timer);
                 submitbtn.click();
@@ -78,8 +81,27 @@ function countDown(duration, q_count) {
     }
 }
 
-function getspan(num) {
-    for (i = 0; i < num; i++) {
-        let addbullet = document.createElement("span");
-    }
+// function random
+
+let rand = CounterData.sort(() => Math.random() - 0.5);
+
+// function of show answers
+
+let res = "";
+
+function show() {
+    document.getElementById("quiz").style.display = "none";
+    document.querySelector(".awsanswers").style.display = "block";
+    RightAnswer.forEach((rep, index) => {
+        res += `<div class="thequest">
+               <h2>${rep.question}</h2>
+            </div>
+            <div class="theansw">
+                <h3>${rep.answer}</h3>
+            </div>
+            <div class="justification">
+                <h6>${rep.justification}</h6>
+            </div>`;
+    });
+    document.getElementById("awsanswers").innerHTML = res;
 }

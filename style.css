@@ -18,7 +18,7 @@ body {
 
 .timer {
   font-size: 30px;
-  text-align: center;
+  text-align: end;
 }
 
 .timer .timer_sec {
@@ -33,6 +33,28 @@ body {
   box-shadow: 0 0 10px 2px rgba(100, 100, 100, 0.1);
   width: 600px;
   overflow: hidden;
+}
+
+.awsanswers {
+  text-align: center;
+  border: 1px solid black;
+  background: #fff;
+  width: 70%;
+  box-shadow: 12px 12px 22px;
+  display: none;
+}
+.awsanswers .thequest h2 {
+  font-size: 25px;
+}
+.awsanswers .theansw h3 {
+  font-size: 20px;
+  margin-bottom: 18px;
+  color: #99e486;
+}
+.awsanswers .justification h6 {
+  font-size: 16px;
+  justify-content: space-around;
+  color: #04adc4;
 }
 
 .quiz-header {
